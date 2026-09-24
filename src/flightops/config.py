@@ -30,6 +30,8 @@ class Settings:
     log_level: str = "INFO"
     log_dir: Path = PROJECT_ROOT / "logs"
     data_dir: Path = PROJECT_ROOT / "data"
+    opensky_client_id: str = ""
+    opensky_client_secret: str = field(default="", repr=False)
 
     @property
     def database_url(self) -> URL:
@@ -83,4 +85,6 @@ def load_settings(env: Mapping[str, str] | None = None) -> Settings:
         log_level=level,
         log_dir=_resolve_path(env.get("LOG_DIR", "logs")),
         data_dir=_resolve_path(env.get("DATA_DIR", "data")),
+        opensky_client_id=env.get("OPENSKY_CLIENT_ID", ""),
+        opensky_client_secret=env.get("OPENSKY_CLIENT_SECRET", ""),
     )
