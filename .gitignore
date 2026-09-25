@@ -32,3 +32,6 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+
+# One-off setup scripts (not part of the project)
+setup_phase*.ps1
