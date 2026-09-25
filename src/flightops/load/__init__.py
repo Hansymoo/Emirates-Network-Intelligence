@@ -1,0 +1,1 @@
+"""Loading extracted data into PostgreSQL raw tables."""
